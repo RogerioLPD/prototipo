@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ChecklistCarrosScreen extends StatefulWidget {
-  const ChecklistCarrosScreen({super.key});
+class ChecklistCaminhaoScreen extends StatefulWidget {
+  const ChecklistCaminhaoScreen({super.key});
 
   @override
-  State<ChecklistCarrosScreen> createState() => _ChecklistCarrosScreenState();
+  State<ChecklistCaminhaoScreen> createState() =>
+      _ChecklistCaminhaoScreenState();
 }
 
-class _ChecklistCarrosScreenState extends State<ChecklistCarrosScreen> {
+class _ChecklistCaminhaoScreenState extends State<ChecklistCaminhaoScreen> {
   // Variáveis para armazenar os valores dos campos de texto
   final TextEditingController kmInicioController = TextEditingController();
   final TextEditingController kmUltimaTrocaController = TextEditingController();
@@ -15,17 +16,24 @@ class _ChecklistCarrosScreenState extends State<ChecklistCarrosScreen> {
       TextEditingController();
 
   List<ItemChecklist> items = [
-    ItemChecklist(
-        'Lataria', 'Verificar integridade de toda a lataria.'),
+    ItemChecklist('Lataria', 'Verificar integridade de toda a lataria.'),
     ItemChecklist(
         'Faróis/Lâmpadas/Piscas', 'Verificar condições e funcionamento.'),
     ItemChecklist(
+        'Parachoques e para-barros', 'Verificar condições e fixação.'),
+    ItemChecklist('Placas de sinalização e de identificação',
+        'Legibilidade e fixação adequada.'),
+    ItemChecklist(
         'Pneus', 'Verificar se estão calibrados e se existe alguma avaria.'),
+    ItemChecklist('Rodas e parafusos',
+        'Condição das rodas, aperto dos parafusos e possíveis deformações.'),
     ItemChecklist(
         'Para-brisa e limpadores', 'Verificar condições e funcionamento.'),
     ItemChecklist('Retrovisores', 'Verificar condições e funcionamento.'),
     ItemChecklist(
         'Instrumentos e indicadores', 'Verificar no painel os indicadores.'),
+    ItemChecklist(
+        'Tacógrafo', 'Condição e funcionamento (inclusive de discos e fitas).'),
     ItemChecklist('Ar-condicionado', 'Verificar condições e funcionamento.'),
     ItemChecklist(
         'Cintos de segurança', 'Verificar condições e funcionamento.'),
@@ -38,6 +46,12 @@ class _ChecklistCarrosScreenState extends State<ChecklistCarrosScreen> {
     ItemChecklist('Freios', 'Verificar condições e funcionamento.'),
     ItemChecklist('Documentação', 'Verificar se os documentos estão em ordem.'),
     ItemChecklist('Itens de segurança', 'Chave de roda/ Triangulo/ Macaco.'),
+    ItemChecklist('Conexões e cabos de freio e elétrica', 'Verificar condições e funcionamento.'),
+    ItemChecklist('Sistema de engate(Reboque)', 'Verificar condições e funcionamento.'),
+    ItemChecklist('Sistema de suspensão', 'Verificar condições e funcionamento.'),
+    ItemChecklist('Rodas da carreta', 'Verificar condições e funcionamento.'),
+    ItemChecklist('Travamento das portas/traseira', 'Verificar condições e funcionamento.'),
+    ItemChecklist('Carreta', 'Verificar integridade geral do reboque.'),
   ];
 
   bool showFinalizarButton =

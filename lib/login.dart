@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototipo/checklist_carros.dart';
+import 'package:prototipo/home.dart';
 
 
 Color orangeColors = Color.fromARGB(255, 31, 167, 245);
@@ -60,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: () {Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ChecklistCarrosScreen(),),);  },
+                          builder: (context) =>  HomeScreen(),),);  },
                           child: const Text(
                             "Entrar",
                           ),
