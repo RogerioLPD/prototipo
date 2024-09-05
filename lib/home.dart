@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototipo/adicionar_carros.dart';
 import 'package:prototipo/checklist_caminhao.dart';
 import 'package:prototipo/checklist_carros.dart';
 import 'package:prototipo/checklist_onibus.dart';
@@ -46,6 +47,13 @@ class HomeScreen extends StatelessWidget {
               Icons.local_shipping,
               Colors.red,
               const ChecklistCaminhaoScreen(),
+            ),
+            _buildButton(
+              context,
+              'Adicionar Carros',
+              Icons.directions_car,
+              Colors.blue,
+               AddCarPage(),
             ),
           ],
         ),

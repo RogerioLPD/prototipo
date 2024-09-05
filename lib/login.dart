@@ -3,8 +3,8 @@ import 'package:prototipo/checklist_carros.dart';
 import 'package:prototipo/home.dart';
 
 
-Color orangeColors = Color.fromARGB(255, 31, 167, 245);
-Color orangeLightColors = Color.fromARGB(255, 30, 242, 65);
+Color orangeColors = Color.fromARGB(255, 81, 229, 248);
+Color orangeLightColors = Color.fromARGB(255, 6, 25, 109);
 
 class LoginPage extends StatefulWidget {
   
@@ -139,8 +139,8 @@ class HeaderContainer extends StatelessWidget {
           Center(
             child: Image.asset(
               "assets/images/logo.png",
-              height: 200,
-              width: 200,
+              height: 250,
+              width: 250,
             ),
           ),
         ],
