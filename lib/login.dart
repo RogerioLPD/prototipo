@@ -3,13 +3,13 @@ import 'package:prototipo/checklist_carros.dart';
 import 'package:prototipo/home.dart';
 
 
-Color orangeColors = Color.fromARGB(255, 81, 229, 248);
-Color orangeLightColors = Color.fromARGB(255, 6, 25, 109);
+Color orangeColors = const Color.fromARGB(255, 81, 229, 248);
+Color orangeLightColors = const Color.fromARGB(255, 6, 25, 109);
 
 class LoginPage extends StatefulWidget {
   
 
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class HeaderContainer extends StatelessWidget {
-  const HeaderContainer({Key? key}) : super(key: key);
+  const HeaderContainer({super.key});
 
   @override
   Widget build(BuildContext context) {

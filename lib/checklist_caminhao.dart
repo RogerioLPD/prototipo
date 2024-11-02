@@ -284,8 +284,8 @@ class _ChecklistCaminhaoScreenState extends State<ChecklistCaminhaoScreen> {
             backgroundColor: color,
             minimumSize: const Size(double.infinity, 50),
           ),
-          child: Text(text),
           onPressed: onPressed,
+          child: Text(text),
         ),
       ),
     );

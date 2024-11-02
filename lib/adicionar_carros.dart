@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class AddCarPage extends StatefulWidget {
+  const AddCarPage({super.key});
+
   @override
   _AddCarPageState createState() => _AddCarPageState();
 }
@@ -71,7 +73,7 @@ class _AddCarPageState extends State<AddCarPage> {
         ).then((_) => _resetForm()); // Reseta o formulário quando voltar
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Por favor, preencha todos os campos.')),
+          const SnackBar(content: Text('Por favor, preencha todos os campos.')),
         );
       }
     }
@@ -81,8 +83,8 @@ class _AddCarPageState extends State<AddCarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Adicionar Veículo',style: TextStyle(color: Colors.white),),
-        backgroundColor: Color.fromARGB(255, 6, 25, 109),
+        title: const Text('Adicionar Veículo',style: TextStyle(color: Colors.white),),
+        backgroundColor: const Color.fromARGB(255, 6, 25, 109),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -98,7 +100,7 @@ class _AddCarPageState extends State<AddCarPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Dados do Veículo',
                     style: TextStyle(
                       fontSize: 22,
@@ -106,7 +108,7 @@ class _AddCarPageState extends State<AddCarPage> {
                       color: Color.fromARGB(255, 6, 25, 109),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Dropdown para selecionar estado
                   DropdownButtonFormField<String>(
                     decoration: InputDecoration(
@@ -131,7 +133,7 @@ class _AddCarPageState extends State<AddCarPage> {
                       });
                     },
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   // Dropdown para selecionar cidade com base no estado selecionado
                   DropdownButtonFormField<String>(
                     decoration: InputDecoration(
@@ -154,7 +156,7 @@ class _AddCarPageState extends State<AddCarPage> {
                       });
                     },
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   // Campo de texto para inserir a placa do veículo
                   TextFormField(
                     decoration: InputDecoration(
@@ -162,7 +164,7 @@ class _AddCarPageState extends State<AddCarPage> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      prefixIcon: Icon(Icons.directions_car, color: Color.fromARGB(255, 6, 25, 109),),
+                      prefixIcon: const Icon(Icons.directions_car, color: Color.fromARGB(255, 6, 25, 109),),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -174,16 +176,16 @@ class _AddCarPageState extends State<AddCarPage> {
                       placa = value;
                     },
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   // Botão para navegar para a próxima tela
                   Center(
                     child: ElevatedButton.icon(
                       onPressed: _navegarParaNovaTela,
-                      icon: Icon(Icons.add, color: Colors.white),
-                      label: Text('Adicionar'),
+                      icon: const Icon(Icons.add, color: Colors.white),
+                      label: const Text('Adicionar'),
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white, backgroundColor: Color.fromARGB(255, 6, 25, 109),
-                        padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                        foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 6, 25, 109),
+                        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -206,7 +208,7 @@ class DadosVeiculoPage extends StatelessWidget {
   final String cidade;
   final String placa;
 
-  DadosVeiculoPage({
+  const DadosVeiculoPage({super.key, 
     required this.estado,
     required this.cidade,
     required this.placa,
@@ -216,8 +218,8 @@ class DadosVeiculoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dados do Veículo', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color.fromARGB(255, 6, 25, 109),
+        title: const Text('Dados do Veículo', style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color.fromARGB(255, 6, 25, 109),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -231,7 +233,7 @@ class DadosVeiculoPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Informações do Veículo',
                   style: TextStyle(
                     fontSize: 22,
@@ -239,32 +241,32 @@ class DadosVeiculoPage extends StatelessWidget {
                     color: Color.fromARGB(255, 6, 25, 109),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   'Estado: $estado',
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   'Cidade: $cidade',
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   'Placa: $placa',
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Center(
                   child: ElevatedButton.icon(
                     onPressed: () {
                       Navigator.pop(context); // Voltar para a tela anterior
                     },
-                    icon: Icon(Icons.arrow_back, color: Colors.white),
-                    label: Text('Voltar'),
+                    icon: const Icon(Icons.arrow_back, color: Colors.white),
+                    label: const Text('Voltar'),
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white, backgroundColor: Color.fromARGB(255, 6, 25, 109),
-                      padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                      foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 6, 25, 109),
+                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),

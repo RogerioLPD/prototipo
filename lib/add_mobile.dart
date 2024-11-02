@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:prototipo/adm_principal.dart';
 import 'package:prototipo/adm_secundario_web.dart';
-import 'package:prototipo/backup.dart';
 import 'package:prototipo/cadastro_usuario.dart';
-import 'package:prototipo/home_cliente.dart';
-import 'package:prototipo/veiculos_disponiveis.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class AddMobilePage extends StatelessWidget {
+  const AddMobilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Check List Veículos'),
-        centerTitle: true,
-      ),
+      backgroundColor: Colors.black,
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.fromLTRB(26, 80, 26, 26),
         child: GridView.count(
           crossAxisCount: 2,
           crossAxisSpacing: 16,
@@ -25,45 +19,17 @@ class HomeScreen extends StatelessWidget {
           children: [
             _buildButton(
               context,
-              'Check List Carros',
-              Icons.directions_car,
-              Colors.blue,
-              const AdminPrincipalPage(),
-            ),
-            _buildButton(
-              context,
-              'Check List Van',
-              Icons.directions_bus,
-              Colors.green,
-              const AdminSecundarioPage(),
-            ),
-            _buildButton(
-              context,
-              'Check List Ônibus',
-              Icons.airport_shuttle,
-              Colors.orange,
-              const FancyBottomBarPage(),
-            ),
-            _buildButton(
-              context,
-              'Check List Caminhão',
-              Icons.local_shipping,
-              Colors.red,
-              const DisponivelVeiculosPage(),
-            ),
-            _buildButton(
-              context,
-              'Adicionar Carros',
-              Icons.directions_car,
-              Colors.blue,
+              'Cadastrar Usuário',
+              Icons.person_add_alt,
+              Colors.deepOrange,
               const CadastrarUsuarioPage(),
             ),
             _buildButton(
               context,
-              'Adicionar Carros',
-              Icons.directions_car,
-              const Color.fromARGB(255, 0, 3, 5),
-              const HomeClientePage(),
+              'Cadastrar Veículos',
+              Icons.garage,
+              Colors.deepOrange,
+              const AdminSecundarioPage(),
             ),
           ],
         ),

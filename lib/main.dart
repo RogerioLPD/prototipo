@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototipo/login.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,16 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('pt', 'BR'), // Português do Brasil
+        Locale('en', 'US'), // Inglês (opcional)
+        // Adicione outros idiomas se necessário
+      ],
       home: const SplashScreen(),
     );
   }
@@ -87,7 +98,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color.fromARGB(255, 6, 25, 109),                                                                                                          
+        color: Colors.black,                                                                                                         
         child: Center(
           child: _showFullScreenImage
               ? Image.asset('assets/images/logo.png',

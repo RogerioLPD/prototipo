@@ -285,8 +285,8 @@ class _ChecklistOnibusScreenState extends State<ChecklistOnibusScreen> {
             backgroundColor: color,
             minimumSize: const Size(double.infinity, 50),
           ),
-          child: Text(text),
           onPressed: onPressed,
+          child: Text(text),
         ),
       ),
     );
