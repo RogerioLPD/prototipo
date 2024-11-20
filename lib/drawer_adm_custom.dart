@@ -31,7 +31,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       child: ListView(
         children: [
            UserAccountsDrawerHeader(
@@ -39,7 +39,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
             accountEmail: Text(userName ?? 'Carregando...'),
             currentAccountPicture: const CircleAvatar(
               backgroundImage: AssetImage("assets/images/logo.png"),
-              backgroundColor: Colors.black,
+              backgroundColor: Colors.white,
             ),
             decoration: const BoxDecoration(
               color: Colors.deepOrange,
@@ -51,7 +51,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
           ),
           ListTile(
             leading: const Icon(Icons.person_add_alt, color: Colors.deepOrange),
-            title: const Text('Cadastrar Usuário',style: TextStyle(color:Colors.white),),
+            title: const Text('Cadastrar Usuário',style: TextStyle(color:Colors.deepOrange),),
             onTap: () {
               // Navegação para a página de Dashboard
               Navigator.pushNamed(context, '/dashboard');
@@ -59,7 +59,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
           ),
           ListTile(
             leading: const Icon(Icons.garage, color: Colors.deepOrange),
-            title: const Text('Cadastrar Veículos',style: TextStyle(color:Colors.white),),
+            title: const Text('Cadastrar Veículos',style: TextStyle(color:Colors.deepOrange),),
             onTap: () {
               // Navegação para a página de Dashboard
               Navigator.pushNamed(context, '/dashboard');
@@ -67,7 +67,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
           ),
           ListTile(
             leading: const Icon(Icons.document_scanner, color: Colors.deepOrange),
-            title: const Text('Relatório de Veículos',style: TextStyle(color:Colors.white),),
+            title: const Text('Relatório de Veículos',style: TextStyle(color:Colors.deepOrange),),
             onTap: () {
               // Navegação para a página de Dashboard
               Navigator.pushNamed(context, '/dashboard');
@@ -75,7 +75,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
           ),
           ListTile(
             leading: const Icon(Icons.checklist, color: Colors.deepOrange),
-            title: const Text('Checklists',style: TextStyle(color:Colors.white),),
+            title: const Text('Checklists',style: TextStyle(color:Colors.deepOrange),),
             onTap: () {
               // Navegação para a página de Dashboard
               Navigator.pushNamed(context, '/dashboard');
@@ -84,7 +84,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
           
           ListTile(
             leading: const Icon(Icons.person, color: Colors.deepOrange),
-            title: const Text('Perfil',style: TextStyle(color:Colors.white),),
+            title: const Text('Perfil',style: TextStyle(color:Colors.deepOrange),),
             onTap: () {
               // Navegação para a página de Perfil
               Navigator.pushNamed(context, '/profile');
@@ -92,7 +92,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
           ),
           ListTile(
             leading: const Icon(Icons.settings, color: Colors.deepOrange),
-            title: const Text('Configurações',style: TextStyle(color:Colors.white),),
+            title: const Text('Configurações',style: TextStyle(color:Colors.deepOrange),),
             onTap: () {
               // Navegação para a página de Configurações
               Navigator.pushNamed(context, '/settings');
@@ -101,7 +101,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
           const Divider(),
           ListTile(
             leading: const Icon(Icons.help, color: Colors.deepOrange),
-            title: const Text('Ajuda',style: TextStyle(color:Colors.white),),
+            title: const Text('Ajuda',style: TextStyle(color:Colors.deepOrange),),
             onTap: () {
               // Navegação para a página de Ajuda
               Navigator.pushNamed(context, '/help');
@@ -109,7 +109,7 @@ class _DrawerAdmSecundarioState extends State<DrawerAdmSecundario> {
           ),
           ListTile(
             leading: const Icon(Icons.logout, color: Colors.deepOrange),
-            title: const Text('Logout',style: TextStyle(color:Colors.white),),
+            title: const Text('Logout',style: TextStyle(color:Colors.deepOrange),),
             onTap: () {
               // Ação de logout e redirecionamento para a tela de login
               FirebaseAuth.instance.signOut();

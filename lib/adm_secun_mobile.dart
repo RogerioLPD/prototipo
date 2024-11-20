@@ -56,27 +56,27 @@ class _ClienteMobilePageState extends State<ClienteMobilePage> {
             items: <FancyBottomNavigationItem>[
               FancyBottomNavigationItem(
                 icon: const Icon(Icons.home,
-                    color: Colors.deepOrange), 
+                    color: Colors.white), 
                 title: const Text('Início'),
               ),
               FancyBottomNavigationItem(
                 icon: const Icon(Icons.document_scanner,
-                    color: Colors.deepOrange), 
+                    color: Colors.white), 
                 title: const Text('Relatórios'),
               ),
               FancyBottomNavigationItem(
                 icon: const Icon(Icons.add,
-                    color: Colors.deepOrange), 
+                    color: Colors.white), 
                 title: const Text('Cadastrar'),
               ),
               FancyBottomNavigationItem(
                 icon: const Icon(Icons.checklist,
-                    color: Colors.deepOrange), 
+                    color: Colors.white), 
                 title: const Text('Checklists'),
               ),
               FancyBottomNavigationItem(
                 icon: const Icon(Icons.person,
-                    color: Colors.deepOrange), 
+                    color: Colors.white), 
                 title: const Text('Perfil'),
               ),
             ],
@@ -156,7 +156,7 @@ class _FancyBottomNavigationState extends State<FancyBottomNavigation> {
       decoration: !isSelected
           ? null
           : BoxDecoration(
-              color: Colors.white,
+              color: Colors.deepOrange,
               borderRadius: const BorderRadius.all(Radius.circular(50)),
             ),
       child: ListView(
@@ -185,7 +185,7 @@ class _FancyBottomNavigationState extends State<FancyBottomNavigation> {
                   ? DefaultTextStyle.merge(
                       style: TextStyle(
                           color:
-                              Colors.black), 
+                              Colors.white), 
                       child: item.title,
                     )
                   : const SizedBox.shrink()
@@ -211,7 +211,7 @@ class _FancyBottomNavigationState extends State<FancyBottomNavigation> {
       height: 56,
       padding: const EdgeInsets.only(left: 8, right: 8, top: 6, bottom: 6),
       decoration: BoxDecoration(
-        color: Colors.black, 
+        color: Colors.deepOrange, 
         boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 2)],
       ),
       child: Row(

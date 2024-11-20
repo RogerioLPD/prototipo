@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -84,14 +85,22 @@ class _DisponivelVeiculosPageState extends State<DisponivelVeiculosPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        centerTitle: true,
+        title: Text('Agenda de Veículos',
+            style: GoogleFonts.montserrat(
+              color: Colors.deepOrange,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1,
+              fontSize: 32,
+            )),
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         bottom: TabBar(
           controller: _tabController,
-          labelColor: Colors.white,
-          unselectedLabelColor: Colors.white70,
+          labelColor: Colors.deepOrange,
+          unselectedLabelColor: Colors.black,
           tabs: const [
             Tab(text: 'Caminhão'),
             Tab(text: 'Carros'),
@@ -105,7 +114,7 @@ class _DisponivelVeiculosPageState extends State<DisponivelVeiculosPage>
           children: [
             _buildCalendar(),
             SizedBox(
-              height: 500, 
+              height: 500,
               child: TabBarView(
                 controller: _tabController,
                 children: [
@@ -126,43 +135,88 @@ class _DisponivelVeiculosPageState extends State<DisponivelVeiculosPage>
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(16),
+        gradient: LinearGradient(
+          colors: [Colors.deepOrange.shade400, Colors.deepOrange.shade600],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFFD3D3D3).withOpacity(0.5), 
-            spreadRadius: 2,
-            blurRadius: 8,
-            offset: const Offset(6, 6), 
+            color: Colors.deepOrange.shade200.withOpacity(0.5),
+            spreadRadius: 3,
+            blurRadius: 10,
+            offset: const Offset(4, 4),
           ),
         ],
       ),
       child: Card(
+        margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        elevation: 4,
-        child: TableCalendar(
-          locale: 'pt_BR',
-          focusedDay: _selectedDate,
-          firstDay: DateTime.utc(2020, 1, 1),
-          lastDay: DateTime.utc(2030, 12, 31),
-          selectedDayPredicate: (day) => isSameDay(_selectedDate, day),
-          onDaySelected: (selectedDay, focusedDay) {
-            setState(() {
-              _selectedDate = selectedDay;
-            });
-          },
-          calendarStyle: const CalendarStyle(
-            selectedDecoration: BoxDecoration(
-              color: Colors.blue,
-              shape: BoxShape.circle,
+        elevation: 6,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TableCalendar(
+            locale: 'pt_BR',
+            focusedDay: _selectedDate,
+            firstDay: DateTime.utc(2020, 1, 1),
+            lastDay: DateTime.utc(2030, 12, 31),
+            selectedDayPredicate: (day) => isSameDay(_selectedDate, day),
+            onDaySelected: (selectedDay, focusedDay) {
+              setState(() {
+                _selectedDate = selectedDay;
+              });
+            },
+            calendarStyle: CalendarStyle(
+              selectedDecoration: BoxDecoration(
+                color: Colors.deepOrange.shade600,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color.fromARGB(255, 131, 130, 130)
+                        .withOpacity(0.5),
+                    blurRadius: 8,
+                    offset: const Offset(2, 2),
+                  ),
+                ],
+              ),
+              todayDecoration: BoxDecoration(
+                color: Colors.deepOrange.shade400,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color.fromARGB(255, 131, 130, 130)
+                        .withOpacity(0.5),
+                    blurRadius: 8,
+                    offset: const Offset(2, 2),
+                  ),
+                ],
+              ),
+              outsideDaysVisible: false,
+              weekendTextStyle: const TextStyle(color: Colors.deepOrange),
+              defaultTextStyle: const TextStyle(color: Colors.black87),
             ),
-            todayDecoration: BoxDecoration(
-              color: Colors.blueAccent,
-              shape: BoxShape.circle,
+            headerStyle: HeaderStyle(
+              formatButtonVisible: false,
+              titleCentered: true,
+              titleTextStyle: GoogleFonts.montserrat(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.deepOrange.shade700,
+              ),
+              leftChevronIcon: Icon(
+                Icons.chevron_left,
+                color: Colors.deepOrange.shade600,
+              ),
+              rightChevronIcon: Icon(
+                Icons.chevron_right,
+                color: Colors.deepOrange.shade600,
+              ),
             ),
-          ),
-          headerStyle: const HeaderStyle(
-            formatButtonVisible: false,
-            titleCentered: true,
+            daysOfWeekStyle: DaysOfWeekStyle(
+              weekdayStyle: const TextStyle(color: Colors.black54),
+              weekendStyle: const TextStyle(color: Colors.deepOrange),
+            ),
           ),
         ),
       ),
@@ -183,7 +237,7 @@ class _DisponivelVeiculosPageState extends State<DisponivelVeiculosPage>
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white)),
+                  color: Colors.deepOrange)),
         ),
         ...veiculosDisponiveis
             .map((veiculo) => _buildVeiculoCard(veiculo))
@@ -194,7 +248,7 @@ class _DisponivelVeiculosPageState extends State<DisponivelVeiculosPage>
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white)),
+                  color: Colors.deepOrange)),
         ),
         ...veiculosIndisponiveis
             .map((veiculo) => _buildVeiculoCard(veiculo))
@@ -213,7 +267,7 @@ class _DisponivelVeiculosPageState extends State<DisponivelVeiculosPage>
             color: const Color(0xFFD3D3D3).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 8,
-            offset: const Offset(6, 6), 
+            offset: const Offset(6, 6),
           ),
         ],
       ),

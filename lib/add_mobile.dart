@@ -9,7 +9,7 @@ class AddMobilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.fromLTRB(26, 80, 26, 26),
         child: GridView.count(
@@ -21,14 +21,14 @@ class AddMobilePage extends StatelessWidget {
               context,
               'Cadastrar Usuário',
               Icons.person_add_alt,
-              Colors.deepOrange,
+              Colors.white,
               const CadastrarUsuarioPage(),
             ),
             _buildButton(
               context,
               'Cadastrar Veículos',
               Icons.garage,
-              Colors.deepOrange,
+              Colors.white,
               const AdminSecundarioPage(),
             ),
           ],
@@ -39,35 +39,38 @@ class AddMobilePage extends StatelessWidget {
 
   Widget _buildButton(BuildContext context, String label, IconData icon,
       Color color, Widget screen) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: color,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        padding: const EdgeInsets.all(16),
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
       ),
-      onPressed: () {
+      elevation: 2,
+      child:InkWell(
+        onTap:
+       () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => screen),
         );
       },
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, size: 50, color: Colors.white),
-          const SizedBox(height: 10),
-          Text(
-            label,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 50, color: Colors.deepOrange),
+            const SizedBox(height: 10),
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.deepOrange,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
+      ),
       ),
     );
   }
